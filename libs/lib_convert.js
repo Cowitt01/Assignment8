@@ -30,11 +30,5 @@ class SuperDate extends Date {
     getShortMonthName() {
         return this.getFullMonthName().substring(0, 3);
     }
-    getDateOrdinal() {
-        const day = this.getDate();
-        const suffix = ["th", "st", "nd", "rd"];
-        const value = day % 100;
-        return day + (suffix[(value - 20) % 10] || suffix[value] || suffix[0]);
 
-    }
 };
