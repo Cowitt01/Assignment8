@@ -5,7 +5,8 @@ INFO 1579
 Shaw
 07/24/2025
 */
-'use strict';
+
+"use strict";
 
 class SuperDate extends Date {
     constructor(date) {

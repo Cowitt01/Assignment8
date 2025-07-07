@@ -1,4 +1,11 @@
-//DO NOT CHANGE THE CODE IN THIS FILE
+/*
+Cory Witt
+script.js
+INFO 1579
+Shaw
+07/24/2025
+*/
+ 
 
 "use strict";
 window.addEventListener('load', function() {
