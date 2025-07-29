@@ -6,8 +6,9 @@ Shaw
 07/27/2025
 */
  
-//Date-a-Lator program allows the user to input a date
-//and displays the full and short names of the day and month.
+//Date-a-Lator program allows the user to input a date.
+//The program will then display the full and short names of the day and month as well
+//as whether the input date was past or present.
 
 "use strict";
 window.addEventListener('load', function() {                               //Ensure the DOM is fully loaded 
@@ -19,13 +20,13 @@ window.addEventListener('load', function() {                               //Ens
     function checkValue(str, max) {                                        // Function validates and formats that the input value
         if (str.charAt(0) !== '0' || str == '00') {
             let num = parseInt(str);
-            if (isNaN(num) || num <= 0 || num > max) num = 1;              // If the input is not numeric, less than or equal to 0, or greater than max, set it to 1 
+            if (isNaN(num) || num <= 0 || num > max) num = 1;              // If the input is not numeric, less than or equal to 0, or greater than max, set the input value to 1 
             str = num > parseInt(max.toString().charAt(0)) && num.toString().length == 1 ? '0' + num : num.toString();   
         };
         return str;
     };
 
-    userInput.addEventListener('input', function(e) {                      // Event listener for input changes. Formats the input and validates the date.
+    userInput.addEventListener('input', function(e) {                      // Event listener for input entry. Formats the input and validates the date.
         const field = e.currentTarget;
         field.type = 'text';
         let input = field.value;                                           
@@ -51,7 +52,7 @@ window.addEventListener('load', function() {                               //Ens
         });
         let output = '';
         
-        if (values.length == 3) {                                        // If there are three values (month, day, year), assign them to variables, and create a new Date object by calling the Date constructor with year, month, and day.
+        if (values.length == 3) {                                        // If input value has the three values of month, day, and year, assign them to variables, and create a new Date object.
           let year = values[2].length !== 4 ? parseInt(values[2]) + 2000 : parseInt(values[2]);
           let month = parseInt(values[0]) - 1;
           let day = parseInt(values[1]);
